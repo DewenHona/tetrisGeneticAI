@@ -857,19 +857,20 @@ window.onkeydown = function (event) {
  	if (draw) {
  		var output = document.getElementById("output");
  		var html = "";
- 		var space = "";
+ 		//var space = "";
  		for (var i = 0; i < grid.length; i++) {
  			if (i === 0) {
  				html += "" + grid[i] + "";
  			} else {
- 				html += "<br />" + space + "" + grid[i] + "";
+ 				html += "<br />" + grid[i] + "";
  			}
  		}
- 		html += "";
+ 		//html += "";
  		for (var c = 0; c < colors.length; c++) {
  			html = replaceAll(html, "," + (c + 1), ",<font color=\"" + colors[c] + "\">" + (c + 1) + "</font>");
  			html = replaceAll(html, (c + 1) + ",", "<font color=\"" + colors[c] + "\">" + (c + 1) + "</font>,");
  		}
+		html = replaceAll(html, ",", "&nbsp");
  		output.innerHTML = html;
  	}
  }
