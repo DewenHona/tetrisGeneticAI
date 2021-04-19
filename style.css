@@ -14,11 +14,19 @@ body {
   border-radius: 10px;
   margin: 2%;
 
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ff5e2d, #ff498f, #7bdcff, #2dee47);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
+#gametitle {
+  margin: 2%;
+}
+
+#gameboard {
+  display: flex;
+  flex-direction: column;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -36,6 +44,10 @@ body {
   background-color: rgb(0, 0, 0);
   border-radius: 10px;
   margin: 2%;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 3px;
+  box-shadow: 10px 10px 30px #000000;
 }
 #score {
   float: left;
@@ -44,10 +56,14 @@ body {
   padding: 2%;
   margin: 2%;
 }
-
+#scoreboard::-webkit-scrollbar {
+  display: none;
+}
 #scoreboard {
-  padding: 2%;
-  margin: 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 450px;
+  padding: 5%;
   float: left;
   background-color: #000000;
   border-radius: 10px;
