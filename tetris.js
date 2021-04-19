@@ -870,6 +870,7 @@ window.onkeydown = function (event) {
  			html = replaceAll(html, "," + (c + 1), ",<font color=\"" + colors[c] + "\">" + (c + 1) + "</font>");
  			html = replaceAll(html, (c + 1) + ",", "<font color=\"" + colors[c] + "\">" + (c + 1) + "</font>,");
  		}
+		// replaces commas with spaces
 		html = replaceAll(html, ",", "&nbsp");
  		output.innerHTML = html;
  	}
