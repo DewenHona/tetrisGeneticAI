@@ -1017,6 +1017,7 @@ function updateScore() {
       //if (inspectMoveSelection) {
       //html += "<br /><pre style=\"font-size:12px\">" + JSON.stringify(moveAlgorithm, null, 2) + "</pre>";
       //	}
+      //cool
     }
     html = replaceAll(
       replaceAll(
