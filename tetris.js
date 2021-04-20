@@ -947,33 +947,10 @@ function output() {
     output.innerHTML = html;
   }
 }
-/**
- * Display Score Board
- */
-
-/*
-	Genenration 1: MaxScore ###
-	Genenration 2: MaxScore ###
-	.
-	.
-	.
-	Genenration n: MaxScore
-	- var maxscore for each generation
-	- maxscore will change after every individual scores new high score
-	- if individual = last guy
-	-      score board[generation] = maxscore
- 	
-	
- 	html = <h2>Generation</h2> + currentgen + maxScore<br>
-
-	if current gen = last indivual
-		updateboard = Gene + Score
-
-	 */
 
 function updateboard(gen, maxscore) {
   scoreboardhtml +=
-    "<h4>Genration " + gen + ": Max Score " + maxscore + "</h4>";
+    "<h5>Genration " + gen + " Max Score : " + maxscore + "</h5>";
   scoreBoard.innerHTML = scoreboardhtml;
 }
 /**
