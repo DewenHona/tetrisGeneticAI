@@ -1,4 +1,5 @@
 //Define 10x20 grid as the board
+//-------------------------------------------
 var grid = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -71,7 +72,7 @@ var colors = [
   "36E0FF",
   "F8931D",
 ];
-
+//-------------------------------------------
 //Used to help create a seeded generated random number for choosing shapes. makes results deterministic (reproducible) for debugging
 var rndSeed = 1;
 
@@ -117,9 +118,10 @@ var moveAlgorithm = {};
 //set to highest rate move
 var inspectMoveSelection = false;
 
+//-------------------------------------------
 //GENETIC ALGORITHM VALUES
 //stores number of genomes, init at 50
-var populationSize = 3;
+var populationSize = 10;
 //stores genomes
 var genomes = [];
 //index of current genome in genomes array
@@ -133,10 +135,12 @@ var archive = {
   elites: [],
   genomes: [],
 };
+
 //rate of mutation
 var mutationRate = 0.05;
 //helps calculate mutation
 var mutationStep = 0.2;
+//-------------------------------------------
 
 //main function, called on load
 function initialize() {
@@ -962,15 +966,15 @@ function updateScore() {
   }
   if (draw) {
     var scoreDetails = document.getElementById("score");
-    var html = "<h2>Score: <br>" + score + "</h2>";
-    html += "<h3>Highest Score: <br>" + highest_score + "</h3>";
+    var html = "<h2>Score: " + score + "</h2>";
+    html += "<h3>High Score: <br>" + highest_score + "</h3>";
     html += "<br /><b>Upcoming Shape:</b>";
     for (var i = 0; i < upcomingShape.length; i++) {
       var next = replaceAll(upcomingShape[i] + "", "0", "&nbsp;");
       html += "<br />&nbsp;&nbsp;&nbsp;&nbsp;" + next;
     }
     for (var l = 0; l < 4 - upcomingShape.length; l++) {
-      html += "<br />";
+      html += "";
     }
     for (var c = 0; c < colors.length; c++) {
       html = replaceAll(
@@ -984,12 +988,15 @@ function updateScore() {
         '<font color="' + colors[c] + '">' + (c + 1) + "</font>,"
       );
     }
-    html += "<br />Drop Time: " + speed;
+    var stats = document.getElementById("stats");
+    var statshtml = "";
+    statshtml += "Drop Time: " + speed;
     if (ai) {
-      html += "<br />Moves: " + movesTaken + "/" + moveLimit;
-      html += "<br />Generation: " + generation;
-      html += "<br />Individual: " + (currentGenome + 1) + "/" + populationSize;
-
+      statshtml += "<br />Moves: " + movesTaken + "/" + moveLimit;
+      statshtml += "<br />Generation: " + generation;
+      statshtml +=
+        "<br />Individual: " + (currentGenome + 1) + "/" + populationSize;
+      stats.innerHTML = statshtml;
       //html += "<br /><pre style=\"font-size:12px\">" + JSON.stringify(genomes[currentGenome], null, 2) + "</pre>";
       //if (inspectMoveSelection) {
       //html += "<br /><pre style=\"font-size:12px\">" + JSON.stringify(moveAlgorithm, null, 2) + "</pre>";
