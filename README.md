@@ -8,7 +8,7 @@ The webpage : [![Netlify Status](https://api.netlify.com/api/v1/badges/159f0214-
 
 ---
 
-![Image1](/assets/snippet_1.png)
+![Image1](/assets/snippet_1.png = 200x100)
 
 ![Image2](/assets/snippet_2.png)
 
