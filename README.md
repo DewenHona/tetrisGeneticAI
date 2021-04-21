@@ -8,13 +8,13 @@ The webpage : [![Netlify Status](https://api.netlify.com/api/v1/badges/159f0214-
 
 ---
 
-![Image1](tetrisGeneticAI/assets/snippet_1.png)
+![Image1](/assets/snippet_1.png)
 
-![Image2](tetrisGeneticAI/assets/snippet_2.png)
+![Image2](/assets/snippet_2.png)
 
-![Image3](tetrisGeneticAI/assets/snippet_3.png)
+![Image3](/assets/snippet_3.png)
 
-![Image4](tetrisGeneticAI/assets/snippet_4.png)
+![Image4](/assets/snippet_4.png)
 
 ---
 
